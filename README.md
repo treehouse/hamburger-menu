@@ -104,4 +104,33 @@ You'll notice you can only see one `ham-bar` now. Actually, all three are visibl
 }
 ```
 
-Now, you should see your hamburger menu.
+Now you should see your hamburger menu! Next, we'll want to hop into the HTML and add a class of `active` to our `<div class="hamburger-menu"></div>`. This is because when we click on our hamburger menu, we'll want to toggle this class on and off. 
+
+When the hamburger menu has a class of `active`, we'll want to style the `<div class="ham-bar"></div>` appropriately. Lets do that now.
+
+For `bar-top` we want to center it and rotate it:
+```
+.hamburger-menu.active .bar-top {
+    transform: translate(-50%, -50%) rotate(-315deg);
+    top: 50%;
+}
+```
+
+for `bar-mid` we want to set the opacity to 0:
+```
+.hamburger-menu.active .bar-mid {
+    opacity: 0;
+}
+```
+
+for `bar-bottom` we want to center it and rotate it:
+```
+.hamburger-menu.active .bar-bottom {
+    transform: translate(-50%, -50%) rotate(-225deg);
+    top: 50%;
+}
+```
+
+Now go ahead and add a class of `active` to your hamburger-menu in the HTML to make sure your hamburger-menu resembles and 'x'. If it does, great! If not, make sure to re-read the above and figure out where you've gone wrong. Once that's done, let's move on to toggling this `active` class via JavaScript!
+
+## JavaScript
