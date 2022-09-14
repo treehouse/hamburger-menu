@@ -46,3 +46,62 @@ body {
     background-color: #ccc;
 }
 ```
+
+Once that's done, lets add some quick stylings to the nav.
+
+```
+nav {
+    padding: 1rem;
+    background-color: #222;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+```
+
+Since the only child element of our nav is the `<div class="hamburger-menu"></div>` we can use `flex` to justify the content to `flex-end` so that our hamburger menu is all the way to the right.
+
+Next, we can start styling our actual hamburger menu.
+
+```
+.hamburger-menu {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    cursor: pointer;
+    padding: 1rem;
+}
+```
+
+We position this `relative` since its child elements (`<div class="ham-bar"></div>` * 3) will need to be positioned absolutely.
+
+All of the `<div class="ham-bar"></div>` elements will get the following styles:
+
+```
+.ham-bar {
+    width: 70%;
+    height: 4px;
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform .6s, opacity .8s, top .6s;
+}
+```
+
+You'll notice you can only see one `ham-bar` now. Actually, all three are visible. They're just all absolutely positioned to the center of `.hamburger-menu`. So let's adjust the `bar-top` and `bar-bottom`:
+
+```
+.bar-top {
+    top: 25%;
+}
+
+.bar-bottom {
+    top: 75%;
+}
+```
+
+Now, you should see your hamburger menu.
