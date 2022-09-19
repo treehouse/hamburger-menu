@@ -134,3 +134,21 @@ for `bar-bottom` we want to center it and rotate it:
 Now go ahead and add a class of `active` to your hamburger-menu in the HTML to make sure your hamburger-menu resembles and 'x'. If it does, great! If not, make sure to re-read the above and figure out where you've gone wrong. Once that's done, let's move on to toggling this `active` class via JavaScript!
 
 ## JavaScript
+
+The JavaScript is very simple, we'll just want to add an event listener on `<div class="hamburger-menu"></div>`. We can create a variable for this as well:
+```
+const hamMenu = document.querySelector('.hamburger-menu');
+hamMenu.addEventListener('click', () => {
+
+});
+```
+
+All we want to do when this event is triggered, is toggle a class of `active` to `<div class="hamburger-menu"></div>`:
+```
+const hamMenu = document.querySelector('.hamburger-menu');
+hamMenu.addEventListener('click', () => {
+    hamMenu.classList.toggle('active');
+});
+```
+
+And that's it, your hamburger menu should toggle both the open and closed state when clicked! 
